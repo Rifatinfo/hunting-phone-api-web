@@ -70,13 +70,18 @@ const showPhoneDetails = (phone) => {
    console.log(phone);
    const phoneName = document.getElementById('show-details-phone-name');
    phoneName.innerText = phone.name;
+  //  <p><span>GPS : </span> ${phone?.others?.GPS || 'No GPS'}</p> 
 
    const showDetailContainer = document.getElementById('show-details-container');
    showDetailContainer.innerHTML = `
-    <img src="${phone.image}" alt="" />
-    <p ><span>Storage : </span>${phone?.mainFeatures?.storage}</P>
-     <p><span>GPS : </span> ${phone?.others?.GPS || 'No GPS'}</p> 
-    <p><span>GPS : </span> ${phone?.others?.GPS ? phone.others.GPS :  'No GPS available in this device'}</p>
+   <div class="flex justify-center items-center p-5"> <img src="${phone.image}" alt="" /></div>
+    <p><span class="text-xl font-semibold">Display Size :</span>${phone?.mainFeatures?.displaySize}</p>
+    <p><span class="text-xl font-semibold"> Chipset :</span>${phone?.mainFeatures?.chipSet}</p>
+    <p><span class="text-xl font-semibold">Memory :</span> ${phone?.mainFeatures?.memory}</p>
+    <p> <span class="text-xl font-semibold">Slug :</span>${phone?.slug}</p>
+    <p> <span class="text-xl font-semibold">Release data : </span>${phone?.releaseDate}</p>
+    <p><span>Storage : </span>${phone?.mainFeatures?.storage}</P>
+    <p><span Release data :>GPS : </span> ${phone?.others?.GPS ? phone.others.GPS :  'No GPS available in this device'}</p>
    `
 
 
